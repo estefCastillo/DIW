@@ -1,0 +1,255 @@
+@charset "UTF-8";
+@import url(fonts.css);
+/* NO USAMOS URL CUANDO EL FICHERO ES LOCAL*/
+
+:root {
+  --color-fondo-cabecera: #D7D9D8;
+  --color-texto-primario: #011126;
+  --color-texto-secundario: #334647d3;
+  --color-boton-1: #99f2d9;
+  --color-boton-2: #ffddb6;
+
+
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #011126;
+}
+
+
+/* Compatibilidad con firefox */
+
+.skipper-anchor, .heading-anchor {
+  display: none;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+p {
+  padding: 0.5rem 0;
+}
+
+h1 {
+  font-size: 2.4rem;
+  /* SE PEDÍA USAR VARIABLES*/
+}
+
+h2 {
+  font-size: -0.5em;
+  /* DONDE DECÍA QUE ERA -0.5REM. DECÍA -0.5REM RESPECTO AL TAMAÑO DEL H1*/
+}
+
+h3 {
+  font-size: -1em;
+  /* LO MISMO */
+  color: var(--color-texto-secundario);
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: #D7D9D8;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  /* esto no sirve de nada si el ancho es 100%*/
+}
+
+header img {
+  width: 100px;
+}
+
+/**** Estilos del menú ****/
+
+#menu ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  /* no usamos px, usamos rem*/
+}
+
+#menu ul li {
+  padding: 10px;
+  /* no usamos px, usamos rem*/
+}
+
+.activa {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Estilos de la línea al pasar sobre cada opción del menu
+#menu ul li:hover {
+  width: 0;
+  height: 4px;
+  border-radius: 10px;
+  background-color: var(--bg-secundario);
+  transition: var(--transicion);
+  text-decoration: underline;
+}  */
+
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del cuerpo - card           =
+=============================================*/
+
+/* estilos del main*/
+main {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+/* estilos de las card */
+section.card {
+  border: 3px solid var(--color-fondo-cabecera);
+  box-shadow: 1px 1px 1px 1px var(--color-fondo-cabecera);
+  border-radius: 10px;
+  overflow: hidden;
+  /* esto se pone en el figure cuando redondeamos los bordes del figure */
+  background-color: #85a2a64e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  /* no usamos px, usamos rem*/
+  min-width: 280px;
+  padding: 15px;
+  /* no usamos px, usamos rem*/
+}
+
+/* estilos del contenedor de la imagen. NO VES QUE PONÍA DEL CONTENEDOR!!ese es el figure */
+section.card>img {
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+/* section.card>img:hover{
+  filter:;
+} */
+section.card h3 {
+  color: gray;
+}
+
+section#logos {
+  display: flex;
+  justify-content: center;
+
+}
+
+section#logos img {
+  width: 30px;
+}
+
+section#logos ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Efectos de la card */
+
+
+
+/* estilos del elemento con id registros */
+
+/* Topos los td menos el último borde derecho 1px */
+
+
+/* Estilos de los botones */
+button {
+  border-radius: 10px;
+  outline: 1px;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+}
+
+/* se pedía usar pseudoclases */
+#seguir {
+  background-color: var(--color-boton-1);
+  color: #011126;
+}
+
+#perfil {
+  background-color: var(--color-boton-2);
+  color: #011126;
+}
+
+
+/* Emplea la pseudoclase para indicar el color de fondo y los cambios de color
+de fondo y color letra al pasar sobre el para los botones */
+#seguir:hover {
+  background-color: var(--color-texto-primario);
+  color: white;
+}
+
+#perfil:hover {
+  background-color: var(--color-texto-primario);
+  color: white;
+}
+
+/*=====  End of Estilos del cuerpo - card ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  display: flex;
+  background-color: var(--color-fondo-cabecera);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  bottom: 0;
+  position: fixed;
+  /* no se pide que sea fijo*/
+  width: 100%;
+}
+
+footer p {
+  color: var(--color-texto-secundario);
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+
+
+/*=============================================
+=            Estilos de las media queries            =
+=============================================*/
+@media (min-width:720px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+}
+
+/*=====  End of Estilos de las media queries  ======*/

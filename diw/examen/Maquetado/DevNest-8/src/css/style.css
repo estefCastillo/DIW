@@ -1,0 +1,337 @@
+@charset "UTF-8";
+@import "./fonts.css";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Compatibilidad con firefox */
+
+.skipper-anchor,
+.heading-anchor {
+  display: none;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+:root {
+  --fuente-titulos: "Merriweather", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --fuente-cuerpo: "Poppins", "Courier New", Courier, monospace;
+  --color-texto-primario: #011126;
+  --color-texto-secundario: #334647d3;
+  --color-boton1: #99F2D9;
+  --bg-primario: #D7D9D8;
+  --color-boton2: #FFDDB6;
+  --bg-secundario: #85a2a64e;
+  --transicion: all .5s ease-in-out;
+  font-family: var(--fuente-cuerpo);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-texto-primario);
+}
+
+p {
+  padding: 0.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--fuente-titulos);
+}
+
+h1 {
+  position: absolute;
+  top: -100%;
+}
+
+h3 {
+  color: var(--color-texto-secundario);
+}
+
+body{
+  width: 100vw;
+  min-height: 100vh;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+  background-color: var(--bg-primario);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+/**** Estilos del menú ****/
+
+.activa {
+  font-weight: bold;
+}
+
+#menu ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+#menu a {
+  text-decoration: none;
+  color: var(--color-texto-primario);
+}
+
+#menu a::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--bg-secundario);
+  transition: var(--transicion);
+}
+
+
+#menu li:hover a::after {
+  width: 100%;
+  background-color: var(--color-texto-primario);
+}
+
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del cuerpo - card           =
+=============================================*/
+
+/* estilos del main*/
+main {
+  /* flex: 1; */
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* estilos de las card */
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px;
+  background-color: var(--bg-secundario);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px;
+}
+
+/* estilos del contenedor de la imagen */
+.card figure {
+  width: 150px;
+  height: 150px;
+  border: 10px solid white;
+  overflow: hidden;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.card .contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.lista-fila {
+  list-style: none;
+  display: flex;
+  gap: .4rem;
+}
+
+.lista-fila img {
+  width: 30px;
+}
+
+/* estilos del elemento con id registros */
+#registros {
+  font-weight: bold;
+  border-collapse: collapse;
+  text-align: center;
+
+}
+
+/* Topos los td menos el último borde derecho 1px */
+
+#registros td:not(:last-child) {
+  border-right: 1px solid var(--color-texto-primario);
+}
+
+#registros td {
+  padding: 0 10px;
+}
+
+
+/* Efectos de la card */
+
+.card:hover figure {
+  filter: grayscale(1);
+  border-color: silver;
+}
+
+.card:hover {
+  background-color: var(--bg-primario);
+  transition: var(--transicion);
+}
+
+
+/* Estilos de los botones */
+.botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border-radius: 10px;
+  padding: 5px 15px;
+  border: none;
+  outline: 1px solid var(--color-texto-primario);
+}
+
+
+
+/* Emplea la pseudoclase para indicar el color de fondo y los cambios de color
+de fondo y color letra al pasar sobre el para los botones */
+button:first-of-type {
+  background-color: var(--color-boton1);
+}
+
+button:last-of-type {
+  background-color: var(--color-boton2);
+}
+
+button:first-of-type:hover {
+  color: var(--color-boton1);
+  background-color: var(--color-texto-primario);
+}
+
+button:last-of-type:hover {
+  color: var(--color-boton2);
+  background-color: var(--color-texto-primario);
+}
+
+/*=====  End of Estilos del cuerpo - card ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  display: flex;
+  flex-direction: column-reverse;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: var(--bg-secundario);
+  width: 100%;
+  padding: 5px;
+}
+
+.lista-footer {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista-footer img {
+  width: 25px;
+}
+
+/*=====  End of Estilos del footer  ======*/
+
+
+
+/*=============================================
+=            Estilos de las media queries            =
+=============================================*/
+
+
+@media screen and (min-width: 720px) {
+
+  main{
+    width: 90%;
+
+  }
+  header{
+    justify-content: space-between;
+  }
+  h1{
+    position: static;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+    overflow: hidden;
+    padding: 5px;
+    gap: 1.5rem;
+  }
+
+  .card .contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/*=====  End of Estilos de las media queries  ======*/

@@ -1,0 +1,495 @@
+/*
+Design by Manuel Vieites Rodríguez modificado por Marina Vega Vázquez
+http://www.educacion.gob.es
+Creative Commons Attribution 2.5 License
+
+Title      : Tarea DIW04.- Hojas de estilos
+Version    : 2.0
+Released   : 10102011
+Modifcado  : 14022021
+Description: Plantilla de tres columnas usando FlexBox y con diseño adaptable 
+con patron Column Drop
+
+*/
+
+/* estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-fondo-titulos: #2C558C;
+  --color-fondo-cabecera: #b0ea3d;
+  --color-fondo-menu: #ffd27f;
+  --color-destacados: #255C14;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  max-width: 975px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  background: #ffffff;
+  font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #666666;
+  margin-top: 20px;
+}
+
+
+h1,
+h2,
+h3 {
+  color: #333333;
+}
+
+
+h3 {
+  font-size: 1rem;
+}
+
+p,
+blockquote,
+ul,
+ol {
+  line-height: 1.65rem;
+  padding: .25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+
+blockquote {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-style: italic;
+}
+
+ul {
+  margin-left: 3rem;
+}
+
+
+ol {
+  margin-left: 3rem;
+}
+
+
+input:not([type=submit]) {
+  color: #666;
+}
+
+a {
+  /* text-decoration: underline; */
+  color: var(--color-destacados);
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e58c24;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+
+.borde {
+  padding: 20px;
+  border-top: 2px solid var(--color-fondo-cabecera);
+  border-radius: 30px 30px 0 0;
+  border-left: 2px solid var(--color-fondo-cabecera);
+  border-right: 2px solid var(--color-fondo-cabecera);
+  height: 70px;
+  width: 100%;
+}
+
+.figure:has(img.left) {
+  width: 200px;
+}
+
+.figure:has(img.right) {
+  height: 20px;
+}
+
+img.left {
+  margin: 5px 20px 0 0;
+  float: left;
+}
+
+img.right {
+  height: 100%;
+  float: right;
+  margin: 5px 0 0 20px;
+}
+
+
+/* titulos de toda la página */
+.title {
+  background: var(--color-fondo-titulos);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title *,
+h2.title {
+
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+.boxed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  width: 99%;
+  padding: 0 10px;
+}
+
+.content {
+  padding: 20px;
+
+}
+
+/* Date */
+
+.date {
+  /* font-size: x-small; */
+  text-align: center;
+  color: #ffffff;
+}
+
+.meta {
+  margin: 0;
+  padding: 10px 20px 40px 20px;
+  border-top: 1px dotted #cccccc;
+  line-height: normal;
+  /* font-size: x-small; */
+}
+
+
+/* Header */
+
+header.cabecera {
+  width: 99%;
+  height: 20vh;
+  max-height: 120px;
+  margin: 0 auto;
+  padding: 0 20px 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--color-fondo-cabecera);
+  /* url(/images/DIW04_SOL_TAR_R01.jpg) no-repeat;*/
+  /* La sintaxis vieja, obsoleta, pero todavía necesaria, con prefijo, para Opera y navegadores basados en WebKit-based */
+  background: -prefix-linear-gradient(top, var(--color-fondo-cabecera), white);
+  /* La nueva sintaxis necesaria para navegadores apegados al estandar (IE 10 y Firefox 10 en adelante), sin prefijo */
+  background: linear-gradient(to bottom, var(--color-fondo-cabecera), white);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  overflow: hidden;
+}
+
+header #logo {
+  display: flex;
+  flex-direction: column
+}
+
+header #logo #logo__icono {
+  width: 80px;
+}
+
+header #logo h1 {
+  font-size: 1.8rem;
+}
+
+#logo-icono {
+  width: 100%;
+}
+
+header #logo a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Cabecera > Menu */
+
+#menu ul {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+#menu li {
+  display: inline;
+  height: 100%;
+
+}
+
+#menu a {
+  display: block;
+  max-width: 78px;
+  height: 30px;
+  margin-left: 2px;
+  padding: 10px 5px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+  line-height: 0.5rem;
+  background-color: #f7feee;
+  box-shadow: 5px 2px 5px 1px rgba(3, 85, 3, 0.753);
+
+}
+
+#menu a:hover {
+  /* La sintaxis vieja, obsoleta, pero todavía necesaria, con prefijo, para Opera y navegadores basados en WebKit-based */
+  background: -prefix-linear-gradient(right, var(--color-fondo-menu), white 50%, var(--color-fondo-menu));
+  /* La nueva sintaxis necesaria para navegadores apegados al estandar (IE 10 y Firefox 10 en adelante), sin prefijo */
+  background: linear-gradient(to right, var(--color-fondo-menu), white 50%, var(--color-fondo-menu));
+  background-color: var(--color-fondo-menu);
+}
+
+#menu ul li.active a {
+  background-color: #ffd07e;
+}
+
+/* Container */
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  top: -50px;
+  position: relative;
+  padding: 0 20px;
+
+}
+
+.columna1,
+.columna2,
+.columna3 {
+  width: 100%;
+}
+
+/* Content > main */
+
+/* main {
+	max-width: 480px;
+	padding-left: 20px;
+} */
+.story {
+  margin: 20px;
+}
+
+/* Content > sidebar */
+
+/* Content > sideba > Inicio de sesi�n ->columna2*/
+/* #sidebar {
+  position: relative;
+
+} */
+
+#login fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border: none;
+}
+
+#login legend {
+  display: none;
+}
+
+#login label {
+  display: block;
+}
+
+#login label:first-of-type {
+  margin-top: 10px;
+}
+
+#login input {
+  margin-bottom: 10px;
+  padding: 2px 5px;
+  font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #666666;
+}
+
+/*.campo{*/
+input:not([type="submit"]) {
+  width: 80%;
+}
+
+
+.campo:focus {
+  background-color: rgba(255, 255, 0, 0.322);
+}
+
+#inputsubmit1 {
+  width: max-content;
+}
+
+/* Content > Sidebar > updates-> columna2 */
+
+#updates ul {
+  margin: 0;
+  list-style: none;
+}
+
+#updates h3 {
+  font-size: 1rem;
+}
+
+#updates p {
+  line-height: normal;
+  font-size: 1rem;
+}
+
+#updates a {
+  text-decoration: none;
+}
+
+/* Content > sidebar2 */
+
+#sidebar2 figure {
+  width: 120px;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+/* Content > sidebar2 > WebsInteres -> columna 3 */
+
+aside {
+  text-align: center;
+}
+
+aside ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: inside;
+}
+
+.imagen {
+  display: none;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+  line-height: normal;
+  /* font-size: x-small; */
+}
+
+footer a {
+  text-decoration: underline;
+  color: #666666;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+/* Media Querie */
+@media (min-width: 600px) {
+  .container {
+    margin: 0 auto;
+  }
+
+  .columna1 {
+    width: 60%;
+    -webkit-order: 2;
+    order: 2;
+  }
+
+  .columna2 {
+    width: 40%;
+    -webkit-order: 1;
+    order: 1;
+  }
+
+  .columna3 {
+    width: 100%;
+    -webkit-order: 3;
+    order: 3;
+  }
+
+  header.cabecera {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+  }
+
+  #menu ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: flex-end;
+    list-style: none;
+  }
+
+  #menu a {
+    display: block;
+    width: 120px;
+    max-width: 120px;
+    height: 40px;
+    margin-left: 2px;
+    padding-top: 10%;
+    font-size: 1rem;
+    background-color: #f7feee;
+    border-radius: inherit;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    line-height: 1.65em;
+    box-shadow: none;
+  }
+
+
+}
+
+@media (min-width: 800px) {
+
+  .columna2,
+  .columna3 {
+    width: 20%;
+  }
+
+  .imagen {
+    display: inline;
+  }
+
+}

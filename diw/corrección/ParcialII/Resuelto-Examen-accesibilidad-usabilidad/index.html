@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- INDICAMOS EL IDIOMA-->
+<!--
+Design by Manuel Vieites Rodríguez modificado por Marina Vega Vázquez
+http://www.educacion.gob.es
+Creative Commons Attribution 2.5 License
+
+Title      : Tarea DIW04.- Hojas de estilos
+Version    : 1.0
+Released   : 10102011
+Modifcado  : 14022021
+Description: Plantilla de tres columnas usando FlexBox y con diseño adaptable con patron Column Drop
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIW04 Plantilla CSS</title>
+  <link rel="stylesheet" href="css/accesible.css">
+</head>
+
+<body>
+  <header class="cabecera">
+    <section id="logo">
+      <a href="#" id="logo__icono"><img src="./images/logo.jpeg" alt="FP"></a> <!-- ERROR - ALT SIN CONTENIDO-->
+      <h1><a href="http://www.educacion.gob.es">www.educacion.gob.es</a></h1> <!-- ERROR - H2 SIN H1-->
+    </section>
+    <nav id="menu">
+      <ul>
+        <li class="active"><a href="#" title="">Inicio</a></li> <!-- DESTACAMOS LA OPCIÓN DEL MENU DONDE ESTAMOS-->
+        <li><a href="#" title="">Información</a></li>
+        <li><a href="#" title="">Cursos</a></li>
+        <li><a href="#" title="">Alumnos</a></li>
+        <li><a href="#" title="">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="borde"></div>
+  <main class="container"> <!-- CAMBIAMOS EL SECTION POR MAIN Y EL MAIN SIGUIENTE POR SECTION -->
+    <section id="main" class="columna1 principal"> <!-- DESTACAMOS ESTA PARTE DE LA PÁGINA, EN LUGAR DEL ASIDE-->
+      <header class="title boxed">
+        <h2><span>¡Bienvenido a TodoFP!</span></h2><!-- ERROR, H3 SIN H2 AL NO TERNER EL H1 ARRIBA-->
+        <h3 class="date"><span class="month">Oct.</span> <span class="day">10</span><span class="year">,
+            2011</span></h3>
+      </header>
+      <article id="welcome">
+        <!-- SE TRATA DE UN ARTICLE NO UN SECTION, AL NO ESTAR DIRECTAMENTE RELACIONADO CON 
+        EL SIGUIENTE CONTENIDO-->
+        <!-- <article class="story"> -->
+        <h4 class="story figure"><img src="images/destacados_fp_a_distancia_branco.png"
+            alt="FP-Formación Profesional a distancia" class="left"> <!-- ERROR - ALT SIN TEXTO -->
+        </h4>
+        <p><strong>FP a distancia</strong> Esta oferta está
+          dirigida especialmente a aquellas personas que,
+          por diferentes razones (no solo laborales), no
+          pueden cursar en los centros educativos y en el
+          horario presencial, la <a href="http://todofp.es/todofp">Formación
+            Profesional</a>. Por tanto,
+          mayoritariamente será el colectivo de personas
+          adultas el destinatario de esta modalidad de
+          enseñanza.
+          Toda la información desde la web: <a href="http://www.educacion.gob.es/fponline.html">FP
+            online</a>.<em>¡¡Matricúlate!!</em></p>
+        <!-- </article> -->
+        <p class="meta">Realizado por Manuel Vieites <a href="#">TodoFP</a> |
+          <a href="#">Educación</a>
+        </p>
+      </article>
+      <!-- end #welcome -->
+      <article id="example" class="post">
+        <!-- ERROR - DEBERÍA SER UN ARTICLE AL NO ESTAR DIRECTAMENTE RELACIONADO CON EL CONTENIDO DE ARRIBA-->
+        <header class="title boxed">
+          <h2><span>DIW04. Hojas de estilos.</span></h2>
+          <h3 class="date"><span class="month">Oct.</span> <span class="day">10</span><span class="year">,
+              2011</span></h3>
+        </header>
+        <blockquote class="story">
+          <p>&ldquo;<strong class="destacado">EDU/2887/2010, de 2 de noviembre</strong>,
+            por la que se establece el currículo del ciclo
+            formativo de Grado Superior correspondiente al
+            título de Técnico Superior en Desarrollo de
+            Aplicaciones Web.&rdquo;</p>
+        </blockquote>
+        <p>Técnicas, procedimiento y actitudes relacionadas:</p>
+        <ol>
+          <li>Crear y vincular hojas de estilo</li>
+          <li>Crear y vincular hojas de estilo en cascada
+            externa</li>
+        </ol>
+        <p>Conceptos soporte relacionados:</p>
+        <ol>
+          <li>Estilos en línea basados en etiquetas y en
+            clases</li>
+          <li>Hojas de estilo auditivas</li>
+          <li>Hojas de estilo para imprimir</li>
+          <li>Herramientas y test de verificación</li>
+        </ol>
+        <footer class="meta">Realizado por Manuel Vieites <a href="#">DIW</a> | <a href="#">TodoFP</a></footer>
+        <!-- ERROR - USAR DIV EN LUGAR DE FOOTER O INCLUSO P, YA QUE SERÍA EL PIE DEL ARTICLE-->
+      </article>
+      <!-- end #example -->
+    </section>
+
+    <!-- fin columna1-->
+    <section id="sidebar" class="columna2">
+      <!-- <article id="login"> -->
+      <!--       <section id="login">  SECTION INNCESARIO-->
+      <h2 class="title">Area de usuarios</h2>
+      <form class="formulario" action="#" id="login">
+        <fieldset> <!-- ERROR- NO HABÍA NI FIELDSET NI LEGEND-->
+          <legend>Formulario entrada</legend>
+          <label for="username">Usuario:</label><!-- LABEL APUNTANDO AL NAME NO AL ID DEL INPUT-->
+          <!-- longitúd mínima 6 máxima 14-->
+          <input id="username" type="email" name="user" class="campo" minlength="6" maxlength="8"
+            placeholder="pedro@todofp.es" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            aria-describedby="username-tip"
+            title="Identificador de usuario. Valido letras mayúsculas y minúsculas, dígitos y punto. Mínimo 6 caracteres, máximo 14"
+            required>
+          <!-- Usamos tooltip para dar más explicación de lo que tiene que hacer el usuario
+            Esto es un formulario que al hacer foco en los <input> aparece un tooltip.
+
+            Para usuarios con lectores de pantalla este tooltip puede pasar desapercibido por lo que añadimos:
+            
+                • en el <input> un atributo 'aria-describedby' con el id de la capa donde se describe.
+                • y en la capa del tooltip añadimos el atributo 'role=”tooltip”' para indicarle que es un tooltip.
+            
+            Este formulario tiene un botón enviar. En este caso la mejor forma de hacerlo accesible es sustituyendolo por un elemento <input> de tipo submit.
+            
+            SOLUCIONA PROBLEMAS WCAG 1.1.1, 1.3.1, 3.2.2-->
+          <span class="tooltip" role="tooltip" id="username-tip">
+            El usuario es tu email
+          </span>
+          <label for="password">Contraseña:</label>
+          <input id="password" type="password" name="password" class="campo" maxlength="12" minlength="8"
+            pattern="[A-Za-z0-9&@!\$%*?]{8,12}" aria-describedby="password-tip" required>
+          <!-- ^(?=.*\d)(?=.*[.@,$%&])(?=.*[a-z])(?=.*[A-Z]).{8,12}$"^(?=(?:.*[A-z]){4})(?=.*[A-Z])(?=(?:.*[0-9]){2})(?=(?:.*[\.@,$&%]){2})[A-Za-z\d\.@,$&%]{8,12}$"-->
+          <div class="tooltip" role="tooltip" id="password-tip">
+            <p>Reglas de la contraseña:</p>
+            <ul>
+              <li>Mínimo 8 caracteres, máximo 15</li>
+              <li>Admite letras en mayúsculas, minúsculas, números y los caracteres especiales: &, @, !, $, %, *, ?
+                y$.
+              </li>
+            </ul>
+          </div>
+          <input id="inputsubmit1" type="submit" name="inputsubmit1" value="Acceder">
+          <p><a href="#">¿Olvidaste la contraseña?</a></p>
+        </fieldset>
+      </form>
+      <!-- </article> -->
+      <!-- end #login -->
+
+      <section id="updates">
+        <h2 class="title">Unidades de trabajo</h2>
+        <ul><!-- ERROR DEBES USAR UL CON LI-->
+          <li>
+            <h3>DIW01, 2011</h3>
+            <p><a href="#">Planificación de interfaces
+                gráficas.&#8230;</a></p>
+          </li>
+          <li>
+            <h3>DIW02, 2011</h3>
+            <p><a href="#">Accesibilidad en la Web.&#8230;</a></p>
+          </li>
+          <li>
+            <h3>DIW03, 2011</h3>
+            <p><a href="#">Usabilidad en la Web.&#8230;</a></p>
+          </li>
+          <li>
+            <h3>DIW04, 2011</h3>
+            <p><a href="#">Hojas de estilos.&#8230;</a></p>
+          </li>
+          <li>
+            <h3>DIW05, 2011</h3>
+            <p><a href="#">Contenidos multimedia en la Web:
+                Imágenes.&#8230;</a></p>
+          </li>
+        </ul>
+      </section>
+      <!-- end #updates -->
+    </section>
+    <!-- end main - .columna2 
+     Esta columna estaba destacada de forma que se consideraba más importante que
+     el resto confundiendo al usuarios, quitamos la clase principal y la ponemos
+     en bienvenido y DIW04 -->
+    <aside id="sidebar2" class="columna3">
+      <h2 class="title">Webs de Interés</h2>
+      <ul class="content">
+        <li> <a href="#">TodoFP</a></li>
+        <li> <a href="#">FP online </a></li>
+        <!-- ERROR! El link estaba vacio, no se sabe hacia donde se dirige la persona -->
+        <li> <a href="#">Platega </a></li>
+        <li> <a href="#">IES San Clemente </a></li>
+      </ul>
+      <!-- end #websinteres -->
+      <figure class="figure"><img src="images/DIW04_SOL_TAR_R00.jpg" alt=""></figure>
+    </aside>
+  </main>
+  <!-- end #sidebar2 -->
+  <!-- end #container -->
+  <footer id="footer" class="borde">
+    <p id="legal">Copyright &copy; 2022 TodoFP. Todos los derechos
+      reservados. Diseñado por <a href="http://www.educacion.gob.es">www.educacion.gob.es</a>.
+      Modificado por Marina Vega Vázquez</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Merriweather";
+    src: url(../fonts/Merriweather_Sans/static/MerriweatherSans-Regular.ttf) format(truetype);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(../fonts/Merriweather_Sans/static/MerriweatherSans-Bold.ttf) format(truetype);
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins/Poppins-Regular.ttf) format(truetype);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins/Poppins-Bold.ttf);
+    font-style: italic;
+    font-weight: bold;
+}
